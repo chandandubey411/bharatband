@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+@import "tailwindcss";
+
+@theme {
+  --color-primary: #8B0000;
+  --color-secondary: #D4AF37;
+  --color-dark: #0F0F0F;
+  --color-dark-light: #1A1A1A;
+  --font-poppins: "Poppins", sans-serif;
+  --font-playfair: "Playfair Display", serif;
+}
+
+:root {
+  color-scheme: dark light;
+}
+
+body {
+  @apply font-poppins bg-[#0F0F0F] text-white overflow-x-hidden;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-playfair;
+}
+
+.glass-morphism {
+  @apply bg-white/5 backdrop-blur-lg border border-white/10;
+}
+
+.gold-gradient {
+  @apply bg-gradient-to-r from-[#D4AF37] via-[#F9E2AF] to-[#D4AF37];
+}
+
+.maroon-gradient {
+  @apply bg-gradient-to-r from-[#8B0000] to-[#5C0000];
+}
+
+.text-gold-gradient {
+  @apply bg-gradient-to-r from-[#D4AF37] via-[#F9E2AF] to-[#D4AF37] bg-clip-text text-transparent;
+}
+
+/* Custom transitions */
+.page-transition-enter {
+  opacity: 0;
+  transform: translateY(10px);
+}
+
+.page-transition-enter-active {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 300ms, transform 300ms;
+}
+
+.page-transition-exit {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.page-transition-exit-active {
+  opacity: 0;
+  transform: translateY(-10px);
+  transition: opacity 300ms, transform 300ms;
+}
